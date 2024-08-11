@@ -23,4 +23,10 @@ public class UserController {
     public List<User> getUsers() {
         return userMapper.getUsers();
     }
+
+    @PostMapping
+    public User insertUser(@RequestBody User user) {
+        userMapper.insertUser(user);
+        return user;
+    }
 }
