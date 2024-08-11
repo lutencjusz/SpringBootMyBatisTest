@@ -18,6 +18,9 @@ public interface UserMapper {
 //    @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "id", before = false, resultType = Long.class)
     void insertUser(User user);
 
+    @Update("UPDATE users SET name = #{name}, email = #{email}, password = #{password} WHERE id = #{id}")
     void updateUser(User user);
-    void deleteUser(String name);
+
+    @Delete("DELETE FROM users WHERE id = #{id}")
+    void deleteUser(String id);
 }

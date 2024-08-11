@@ -29,4 +29,15 @@ public class UserController {
         userMapper.insertUser(user);
         return user;
     }
+
+    @PutMapping
+    public User updateUser(@RequestBody User user) {
+        userMapper.updateUser(user);
+        return user;
+    }
+
+    @DeleteMapping("/{id}")
+    void deleteUser(@PathVariable String id) {
+        userMapper.deleteUser(id);
+    }
 }
